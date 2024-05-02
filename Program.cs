@@ -48,7 +48,7 @@ namespace MyProjects
 
                     Citizen newCitizen = new Citizen(name, lastName, age, nation, language, region);
                     Console.WriteLine("\n--------------------------------");
-                    Console.WriteLine("İsim: {0}\nSoyisim: {1}\nYaş: {2}\nÜlke: {3}\nDil: {4}\nBölge: {5}",
+                    Console.WriteLine("Name: {0}\nLast Name: {1}\nAge: {2}\nCountry: {3}\nLanguage: {4}\nRegion: {5}",
                         newCitizen.CitizenName, newCitizen.CitizenLastName, newCitizen.CitizenAge, newCitizen.NationName, newCitizen.NationLanguage, newCitizen.Region);
                     Console.WriteLine("\n--------------------------------");
                     Console.ReadLine();
