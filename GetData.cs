@@ -55,7 +55,6 @@ namespace MyProjects
                     Console.WriteLine("\n--------------------------------");
                     Console.ReadLine();
                 }
-
             }
             catch (Exception ex)
             {
