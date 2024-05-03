@@ -61,7 +61,7 @@ namespace MyProjects
         {
             try
             {
-                string[] currentDirectory = Directory.GetCurrentDirectory().Split('\\');
+                string[] currentDirectory = Directory.GetCurrentDirectory().Split("\\");
                 string filePath = "";
                 for (int i = 0; i <= (currentDirectory.Length) - 3; i++)
                     filePath += currentDirectory[i] + "\\";
