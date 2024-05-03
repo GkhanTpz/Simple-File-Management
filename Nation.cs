@@ -61,10 +61,10 @@ namespace MyProjects
         {
             try
             {
-                string[] currentDirectory = Directory.GetCurrentDirectory().Split("\\");
+                string[] currentDirectory = Directory.GetCurrentDirectory().Split('\\');
                 string filePath = "";
                 for (int i = 0; i <= (currentDirectory.Length) - 3; i++)
-                    filePath += currentDirectory[i] + "\\";
+                    filePath += currentDirectory[i] + '\\';
                 filePath += "citizen.txt";
                 Console.WriteLine("File Path: {0}", filePath);
         
