@@ -57,10 +57,14 @@ namespace MyProjects
     class GetData
     {
         #region Methods
+        /// <summary>
+        /// Get and Show Citizen Details.
+        /// </summary>
         public static void CitizenData()
         {
             try
             {
+                // Show Path or Citizen File.
                 string[] currentDirectory = Directory.GetCurrentDirectory().Split('\\');
                 string filePath = "";
                 for (int i = 0; i <= (currentDirectory.Length) - 3; i++)
@@ -68,10 +72,10 @@ namespace MyProjects
                 filePath += "citizen.txt";
                 Console.WriteLine("File Path: {0}", filePath);
         
-                FileStream fs = new FileStream(filePath, FileMode.OpenOrCreate, FileAccess.Write);
+                FileStream fs = new FileStream(filePath, FileMode.OpenOrCreate, FileAccess.ReadWrite);
                 using (StreamWriter sw = new StreamWriter(fs))
                 {
-                    sw.WriteLine("--------------------------------");
+                    sw.WriteLine(new String('-',20);
                     Console.Write("Please enter a Citizen Name: ");
                     string name = Console.ReadLine();
                     sw.WriteLine(name);
@@ -95,17 +99,20 @@ namespace MyProjects
                     Console.Write("Please enter Region: ");
                     string region = Console.ReadLine();
                     sw.WriteLine(region);
-                    sw.WriteLine("--------------------------------");
+                    sw.WriteLine();
                     sw.Close();
 
                     Citizen newCitizen = new Citizen(name, lastName, age, nation, language, region);
-                    Console.WriteLine("\n--------------------------------");
-                    Console.WriteLine("Name: {0}\nLast Name: {1}\nAge: {2}\nCountry: {3}\nLanguage: {4}\nRegion: {5}",
-                        newCitizen.CitizenName, newCitizen.CitizenLastName, newCitizen.CitizenAge, newCitizen.NationName, newCitizen.NationLanguage, newCitizen.Region);
-                    Console.WriteLine("\n--------------------------------");
+                    Console.WriteLine(new String('-', 20));
+                    Console.WriteLine($"Name: {newCitizen.CitizenName}\n" +
+                                      $"Last Name: {newCitizen.CitizenLastName}\n" +
+                                      $"Age: {newCitizen.CitizenAge}\n" +
+                                      $"Country: {newCitizen.NationName}\n" +
+                                      $"Language: {newCitizen.NationLanguage}\n" +
+                                      $"Region: {newCitizen.Region}");
+                    Console.WriteLine();
                     Console.ReadLine();
                 }
-
             }
             catch (Exception ex)
             {
