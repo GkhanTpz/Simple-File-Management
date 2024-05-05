@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Data.SqlTypes;
 using System.IO;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -28,6 +29,11 @@ namespace MyProjects
             Region = region;
         }
         #endregion
+
+        #region Methods
+        public virtual void Added() =>
+             Console.WriteLine("Nation has been added.");
+        #endregion
     }
 
     class Citizen: Nation
@@ -52,6 +58,11 @@ namespace MyProjects
             CitizenAge = citizenAge;
         }
         #endregion
+
+        #region Methods
+        public override void Added() =>
+            Console.WriteLine("New Citizen has been added.");
+        #endregion
     }
 
     class GetData
@@ -65,17 +76,18 @@ namespace MyProjects
             try
             {
                 // Show Path or Citizen File.
+                string ch = new string('-', 20);
                 string[] currentDirectory = Directory.GetCurrentDirectory().Split('\\');
                 string filePath = "";
                 for (int i = 0; i <= (currentDirectory.Length) - 3; i++)
                     filePath += currentDirectory[i] + '\\';
                 filePath += "citizen.txt";
                 Console.WriteLine("File Path: {0}", filePath);
-        
+
                 FileStream fs = new FileStream(filePath, FileMode.OpenOrCreate, FileAccess.ReadWrite);
                 using (StreamWriter sw = new StreamWriter(fs))
-                {
-                    sw.WriteLine(new String('-',20);
+                {   
+                    sw.WriteLine(ch);
                     Console.Write("Please enter a Citizen Name: ");
                     string name = Console.ReadLine();
                     sw.WriteLine(name);
@@ -99,18 +111,20 @@ namespace MyProjects
                     Console.Write("Please enter Region: ");
                     string region = Console.ReadLine();
                     sw.WriteLine(region);
-                    sw.WriteLine();
+                    sw.WriteLine(ch);
                     sw.Close();
 
+                    // Prompt user for citizen data.
                     Citizen newCitizen = new Citizen(name, lastName, age, nation, language, region);
-                    Console.WriteLine(new String('-', 20));
+                    Console.WriteLine(ch);
                     Console.WriteLine($"Name: {newCitizen.CitizenName}\n" +
                                       $"Last Name: {newCitizen.CitizenLastName}\n" +
                                       $"Age: {newCitizen.CitizenAge}\n" +
                                       $"Country: {newCitizen.NationName}\n" +
                                       $"Language: {newCitizen.NationLanguage}\n" +
                                       $"Region: {newCitizen.Region}");
-                    Console.WriteLine();
+                    Console.WriteLine(ch);
+                    newCitizen.Added();
                     Console.ReadLine();
                 }
             }

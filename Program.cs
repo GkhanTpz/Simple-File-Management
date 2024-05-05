@@ -24,8 +24,7 @@ namespace MyProjects
                 Console.Write("{0} ",primeNumbers[i]);
             */
 
-           GetData.CitizenData();
-            
+            GetData.CitizenData();
         }
     }
 }
