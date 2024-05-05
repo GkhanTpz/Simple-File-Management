@@ -25,7 +25,7 @@ namespace MyProjects
             Console.Write("Please enter your Country Region: ");
             string Region = Console.ReadLine();
 
-            File.WriteFile(Name, LastName, Age, Language, Country, Region);
+            File.WriteToFile(Name, LastName, Age, Language, Country, Region);
             PrintPersonData.PrintPerson(Name, LastName, Age, Language, Country, Region);
         }
     }
