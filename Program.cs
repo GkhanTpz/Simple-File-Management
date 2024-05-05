@@ -7,27 +7,26 @@ namespace MyProjects
     {
         static void Main(string[] args)
         {
-            string ch = new string('-', 20);
-            Console.Write("Please enter a Citizen Name: ");
-            string name = Console.ReadLine();
+            Console.Write("Please enter your Name: ");
+            string Name = Console.ReadLine();
 
-            Console.Write("Please enter a Citizen Last Name: ");
-            string lastName = Console.ReadLine();
+            Console.Write("Please enter your Last Name: ");
+            string LastName = Console.ReadLine();
 
-            Console.Write("Please enter a Citizen Age: ");
-            int age = Convert.ToInt32(Console.ReadLine());
+            Console.Write("Please enter your Age: ");
+            int Age = Convert.ToInt32(Console.ReadLine());
 
-            Console.Write("Please enter a Citizen Nation: ");
-            string country = Console.ReadLine();
+            Console.Write("Please enter your Language: ");
+            string Language = Console.ReadLine();
 
-            Console.Write("Please enter a Citizen Language: ");
-            string language = Console.ReadLine();
+            Console.Write("Please enter your Country: ");
+            string Country = Console.ReadLine();
 
-            Console.Write("Please enter Region: ");
-            string region = Console.ReadLine();
+            Console.Write("Please enter your Country Region: ");
+            string Region = Console.ReadLine();
 
-            File.WriteFile(name, lastName, age, country, language, region);
-            PrintPersonData.PrintPerson(name, lastName, age, country, language, region);
+            File.WriteFile(Name, LastName, Age, Language, Country, Region);
+            PrintPersonData.PrintPerson(Name, LastName, Age, Language, Country, Region);
         }
     }
 }

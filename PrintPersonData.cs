@@ -9,21 +9,31 @@ namespace MyProjects
 {
     class PrintPersonData
     {
-        public static string PrintPerson(string name, string lastName, int age, string country, string language, string region)
+        /// <summary>
+        /// Get Person Details and Show them on Console.
+        /// </summary>
+        /// <param name="Name">Get Person's Name</param>
+        /// <param name="LastName"> Get Person's Last Name</param>
+        /// <param name="Age">Get Person Age</param>
+        /// <param name="Language">Get Person's Language</param>
+        /// <param name="Country">Get Person's Country</param>
+        /// <param name="Region">Get Person's Country Region</param>
+        /// <returns>Show Person Details on console</returns>
+        public static string PrintPerson(string Name, string LastName, int Age, string Language, string Country, string Region)
         {
             string ch = new string('-', 20);
 
             // Prompt user for citizen data.
-            var newPerson = new Citizen(name, lastName, age, country, language, region);
+            var person = new NewPerson();
             Console.WriteLine(ch);
-            Console.WriteLine($"Name: {newPerson.CitizenName}\n" +
-                              $"Last Name: {newPerson.CitizenLastName}\n" +
-                              $"Age: {newPerson.CitizenAge}\n" +
-                              $"Country: {newPerson.NationName}\n" +
-                              $"Language: {newPerson.NationLanguage}\n" +
-                              $"Region: {newPerson.Region}\n");
-            Console.WriteLine(ch);
-            newPerson.Added();
+            person.Person.Name = Name;
+            person.Person.LastName = LastName;
+            person.Person.Age = Age;
+            person.Person.Language = Language;
+            person.Country.CountryName = Country;
+            person.Country.Region = Region;
+            person.Print();
+            person.Added();
             Console.ReadLine();
 
             return "";

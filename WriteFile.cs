@@ -13,7 +13,7 @@ namespace MyProjects
         /// <summary>
         /// Write Citizen Details to citizen.txt.
         /// </summary
-        public static string WriteFile(string name, string lastName, int age, string country, string language, string region)
+        public static string WriteFile(string name, string lastName, int age, string language, string country,  string region)
         {
             try
             {
@@ -33,8 +33,8 @@ namespace MyProjects
                     sw.WriteLine(name);
                     sw.WriteLine(lastName);
                     sw.WriteLine(age);
-                    sw.WriteLine(country);
                     sw.WriteLine(language);
+                    sw.WriteLine(country);
                     sw.WriteLine(region);
                     sw.WriteLine(ch);
                     sw.Close();
