@@ -13,7 +13,7 @@ namespace MyProjects
         /// <summary>
         /// Write Citizen Details to citizen.txt.
         /// </summary
-        public static string WriteFile(string name, string lastName, int age, string language, string country,  string region)
+        public static string WriteToFile(string name, string lastName, int age, string language, string country,  string region)
         {
             try
             {
