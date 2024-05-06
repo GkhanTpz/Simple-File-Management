@@ -26,7 +26,7 @@ namespace MyProjects
             string Region = Console.ReadLine();
 
             File.WriteToFile(Name, LastName, Age, Language, Country, Region);
-            PrintPersonData.PrintPerson(Name, LastName, Age, Language, Country, Region);
+            Print.PrintPersonData(Name, LastName, Age, Language, Country, Region);
         }
     }
 }

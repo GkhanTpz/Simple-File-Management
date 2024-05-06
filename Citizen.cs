@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MyProjects
 {
-    public class Citizen
+    public abstract class Citizen
     {
         public Person Person { get; } = new Person();
         public Country Country { get; } = new Country();
@@ -31,10 +31,9 @@ namespace MyProjects
 
         #region Methods
         public override string ToString() =>
-            $"Name: {Name}\n" +
-            $"Last Name: {LastName}\n" +
+            $"Full Name: {Name} {LastName}\n" +
             $"Age: {Age}\n" +
-            $"language = {Language}";
+            $"language: {Language}";
         #endregion
     }
 
