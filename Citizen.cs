@@ -8,11 +8,13 @@ namespace MyProjects
 {
     public abstract class Citizen
     {
+        #region Properties
         public Person Person { get; } = new Person();
         public Country Country { get; } = new Country();
+        #endregion
 
         #region Constructors
-        protected Citizen()
+        public Citizen()
         {
             Console.WriteLine("\nAdded New Citizen having details below.");
         }
@@ -35,7 +37,7 @@ namespace MyProjects
         public int Age { get; set; }
         public string Language { get; set; }
         #endregion
-        
+
         #region Methods
         public override string ToString() =>
             $"Full Name: {Name} {LastName}\n" +
