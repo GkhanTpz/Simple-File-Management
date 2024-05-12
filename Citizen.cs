@@ -29,7 +29,7 @@ namespace MyProjects
         #endregion
     }
 
-    public class Person
+    public sealed class Person
     {
         #region Properties
         public string Name { get; set; }
@@ -46,7 +46,7 @@ namespace MyProjects
         #endregion
     }
 
-    public class Country
+    public sealed class Country
     {
         #region Properties
         public string CountryName { get; set; }
