@@ -23,7 +23,11 @@ namespace MyProjects
             string Country = Console.ReadLine();
 
             Console.Write("Please enter your Country Region: ");
-            string Region = Console.ReadLine();          
+            string Region = Console.ReadLine();
+
+            IPersonDetails person = new NewPerson();
+            person.WriteToFile(Name, LastName, Age, Language, Country, Region);
+            person.GetPersonData(Name, LastName, Age, Language, Country, Region);
         }
     }
 }

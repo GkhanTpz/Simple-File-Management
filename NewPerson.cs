@@ -22,13 +22,11 @@ namespace MyProjects
             string ch = new string('-', 25);
 
             // Prompt user for citizen data.
-            IPersonDetails person = new NewPerson();
-
             Console.WriteLine(ch);
-            this.Person.Name = Name;
-            this.Person.LastName = LastName;
-            this.Person.Age = Age;
-            this.Person.Language = Language;
+            Person.Name = Name;
+            Person.LastName = LastName;
+            Person.Age = Age;
+            Person.Language = Language;
             this.Country.CountryName = Country;
             this.Country.Region = Region;
             Print();
