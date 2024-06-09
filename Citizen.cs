@@ -1,12 +1,13 @@
 using System;
 using System.Collections.Generic;
-using System.IO;
+using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MyProjects
+
+namespace Citizen
 {
-    public abstract class Citizen
+    abstract class Citizen
     {
         #region Properties
         public Person Person { get; } = new Person();
@@ -16,26 +17,24 @@ namespace MyProjects
         #region Constructors
         public Citizen()
         {
-            Console.WriteLine("\nAdded New Citizen having details below.");
+            Console.WriteLine($"\nAdded New Citizen having details below.");  
         }
         #endregion
 
         #region Methods
-        public virtual void Print() =>
-            Console.Write($"Citizen:\n" +
-                $"{Person}\n{Country}\n");
-        public virtual void Added() =>
-            Console.WriteLine("New Citizen has been added.");
+        public abstract void PrintCitizen();
+        public abstract void AddPersonMessage();
         #endregion
     }
 
-    public sealed class Person
+    sealed class Person
     {
         #region Properties
         public string Name { get; set; }
         public string LastName { get; set; }
         public int Age { get; set; }
         public string Language { get; set; }
+
         #endregion
 
         #region Methods
@@ -46,17 +45,19 @@ namespace MyProjects
         #endregion
     }
 
-    public sealed class Country
+    sealed class Country
     {
-        #region Properties
+        #region Properties  
+        public int CountryId { get; set; }
         public string CountryName { get; set; }
-        public string Region { get; set; }
+        public string CountryRegion { get; set; }
         #endregion
 
         #region Methods
         public override string ToString() =>
             $"Country Name: {CountryName}\n" +
-            $"Region: {Region}\n";
+            $"Region: {CountryRegion}\n" +
+            $"Country Id: {CountryId}";
         #endregion
     }
 }
