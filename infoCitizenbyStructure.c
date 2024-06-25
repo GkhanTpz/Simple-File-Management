@@ -17,24 +17,24 @@ struct Citizen
     struct Nation nation;
 }citizen;
 
-void errorMsg(const char *error);
-void getCitizenData(struct Citizen *citizen);
-void printCitizenToFile(const struct Citizen *citizen);
+void ErrorMsg(const char *error);
+void GetCitizenData(struct Citizen *citizen);
+void PrintCitizenToFile(const struct Citizen *citizen);
 
 int main()
 {
-    getCitizenData(&citizen);
-    printCitizenToFile(&citizen);
+    GetCitizenData(&citizen);
+    PrintCitizenToFile(&citizen);
 
     return 0;
 }
 
-void errorMsg(const char *error)
+void ErrorMsg(const char *error)
 {
     printf("%s could not be created...\n", error);
 }
 
-void getCitizenData(struct Citizen *citizen)
+void GetCitizenData(struct Citizen *citizen)
 {
     printf("Enter Name of Citizen: ");
     scanf("%49s",citizen->name_citizen);
@@ -50,26 +50,27 @@ void getCitizenData(struct Citizen *citizen)
     scanf("%49s",citizen->nation.region);
 }
 
-void printCitizenToFile(const struct Citizen *citizen)
+void PrintCitizenToFile(const struct Citizen *citizen)
 {
-    FILE *citizen_file = fopen("citizen.txt", "a+b");
-    if (citizen_file == NULL)
+    FILE *citizenFile = fopen("citizen.txt", "a+b");
+    if (citizenFile == NULL)
     {
         errorMsg("citizen.txt");
+        printf("File hasn't been read and written...\n");
         exit(1);
     }
     else
     {
-        fprintf(citizen_file, "---------------------------------------------------------------\n");
-        fprintf(citizen_file, "Name of Citizen                  : %s\n", citizen->name_citizen);
-        fprintf(citizen_file, "Last Name of Citizen             : %s\n", citizen->lastname_citizen);
-        fprintf(citizen_file, "Age of Citizen                   : %d\n", citizen->age_citizen);
-        fprintf(citizen_file, "Name of Citizen's Nation         : %s\n", citizen->nation.name);
-        fprintf(citizen_file, "Language of Citizen's Nation     : %s\n", citizen->nation.language);
-        fprintf(citizen_file, "Region of Citizen's Nation       : %s\n", citizen->nation.region);
-        fprintf(citizen_file, "---------------------------------------------------------------\n");
+        fprintf(citizenFile, "---------------------------------------------------------------\n");
+        fprintf(citizenFile, "Name of Citizen                  : %s\n", citizen->name_citizen);
+        fprintf(citizenFile, "Last Name of Citizen             : %s\n", citizen->lastname_citizen);
+        fprintf(citizenFile, "Age of Citizen                   : %d\n", citizen->age_citizen);
+        fprintf(citizenFile, "Name of Citizen's Nation         : %s\n", citizen->nation.name);
+        fprintf(citizenFile, "Language of Citizen's Nation     : %s\n", citizen->nation.language);
+        fprintf(citizenFile, "Region of Citizen's Nation       : %s\n", citizen->nation.region);
+        fprintf(citizenFile, "---------------------------------------------------------------\n");
+        printf("File has been read and written...\n");
     }
 
-    printf("File has been read and written...\n");
-    fclose(citizen_file);
+    fclose(citizenFile);
 }
