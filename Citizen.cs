@@ -14,12 +14,6 @@ namespace Citizen
         public Country Country { get; } = new Country();
         #endregion
 
-        #region Constructors
-        public Citizen()
-        {
-            Console.WriteLine($"\nAdded New Citizen having details below.");  
-        }
-        #endregion
 
         #region Methods
         public abstract void PrintCitizen();
