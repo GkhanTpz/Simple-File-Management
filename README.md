@@ -1,5 +1,3 @@
----
-
 # Simple File Management
 
 **Simple File Management** is a repository showcasing applications developed in both **C** and **C#**, focusing on efficient data handling and file management techniques. This project demonstrates foundational programming concepts, including structured data representation, object-oriented programming (OOP), and file input/output (I/O) operations. 
